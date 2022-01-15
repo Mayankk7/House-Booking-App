@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  text-align: left;
 }
 
 .App-logo {
@@ -37,14 +37,3 @@
   }
 }
 
-.nav-link{
-  color:white!important;
-}
-
-.navbar-brand{
-  color:white!important;
-}
-
-.navbar-nav{
-  margin-left:auto!important;
-}
