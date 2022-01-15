@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Roboto+Condensed&display=swap');
 
+html{
+  overflow-x: hidden!important;
+}
+
 body {
   margin: 0;
   font-family: 'Roboto Condensed', sans-serif!important;
@@ -44,4 +48,20 @@ h1{
 .big-img{
   height:400px;
   border-radius:5px!important;
+}
+
+input{
+  box-shadow: none!important;
+  margin-top: 15px;
+  border: 2px solid black!important;
+}
+
+h2{
+  font-size:30px!important;
+  padding:10px!important;
+  font-weight: bold!important;
+}
+
+.dropdown-toggle{
+  border:0px solid black!important;
 }
