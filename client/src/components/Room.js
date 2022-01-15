@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Modal, Button, Carousel } from "react-bootstrap"
-import {Link} from "react-router-dom"
-const Room = ({ room }) => {
+import { Link } from "react-router-dom"
+const Room = ({ room, fromdate, todate }) => {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -13,17 +13,20 @@ const Room = ({ room }) => {
                 <img src={room.imageurls[0]} className='smallimg' />
             </div>
             <div className='col-md-7'>
-                <h1>{room.name}</h1>
-                <b><p>Max Count : {room.maxcount}</p>
-                    <p>Phone Number : {room.phonenumber}</p>
-                    <p>Type : {room.type}</p></b>
+                <b><h1>{room.name}</h1></b>
+                <p>Max Count : {room.maxcount}</p>
+                <p>Phone Number : {room.phonenumber}</p>
+                <p>Type : {room.type}</p>
 
                 <div style={{ float: "right" }}>
-                    <Link to={`/book/${room._id}`}>
-                        <button className='btn btn-dark mx-2'>Book Now</button>
-                    </Link>
+
+                    {(fromdate && todate) && (
+                        <Link to={`/book/${room._id}/${fromdate}/${todate}`}>
+                            <button className='btn btn-dark mx-2'>Book Now</button>
+                        </Link>
+                    )}
                     <button className='btn btn-dark' onClick={handleShow}>View Details</button>
-                    
+
                 </div>
             </div>
 
@@ -40,7 +43,7 @@ const Room = ({ room }) => {
                                         className="d-block w-100 big-img"
                                         src={url}
                                     />
-                                    
+
                                 </Carousel.Item>
                             })
                         }

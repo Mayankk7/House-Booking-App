@@ -11,7 +11,7 @@ const Navbar = () => {
     return (
         <div>
             <nav class="navbar navbar-expand-lg bg-dark">
-                <a class="navbar-brand mx-5" href="#">ROOMBOOK</a>
+                <a class="navbar-brand mx-5" href="/home">ROOMBOOK</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon mx-5"><i class="fa fa-bars" style={{color:"white"}}></i></span>
                 </button>
