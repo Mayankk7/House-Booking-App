@@ -27,11 +27,13 @@ const ProfileScreen = () => {
         <div className='m-5 container'>
             <Tabs defaultActiveKey="1">
                 <TabPane tab="Profile" key="1">
-                    <h1>My Profile</h1>
+                    <div className='bs'>
+                    <b><h1>MY PROFILE</h1></b>
                     <br />
                     <h1>Name : {user.name}</h1>
                     <h1>Email : {user.email}</h1>
                     <h1>IsAdmin : {user.isAdmin ? 'YES' : 'NO'}</h1>
+                    </div>
                 </TabPane>
                 <TabPane tab="Bookings" key="2">
                     <MyBookings />
