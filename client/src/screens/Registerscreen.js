@@ -3,6 +3,14 @@ import axios from "axios"
 import Success from '../components/Success';
 import Error from '../components/Error';
 import Loader from "../components/Loader"
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
+AOS.init(
+    {
+        duration:1000
+    }
+);
 
 const Registerscreen = () => {
 
@@ -49,8 +57,8 @@ const Registerscreen = () => {
         {error && <Error/>}
         
 
-            <div className='row justify-content-center mt-5'>
-                <div className='col-md-5 bs mt-5'>
+            <div className='row justify-content-center mt-5' data-aos="fade-in">
+                <div className='col-md-5 bs mt-5 ' style={{backgroundColor:"white"}}> 
                 {success && <Success message="Registration Successful"/>}
                     <div>
                         <h2 className='text-center'>REGISTER</h2>

@@ -67,7 +67,7 @@ const Bookingscreen = ({ match }) => {
             const result = await axios.post('/api/bookings/bookroom', bookingDetails)
             setloading(false)
             Swal.fire("Congratulations","Your Room Booked Successfully","success").then(result =>{
-                window.location.href="/bookings"
+                window.location.href="/profile"
             })
 
         } catch (error) {
@@ -83,31 +83,30 @@ const Bookingscreen = ({ match }) => {
 
             {loading ? <h1><Loader /></h1> : room ? (
 
-                <div className='row justify-content-center mt-5 bs'>
-                    <div className='col-md-7'>
-                        <h1>{room.name}</h1>
-                        <img src={room.imageurls[0]} className='bigimg m-2' />
+                <div className='row justify-content-center mt-5 bs' style={{backgroundColor:"white"}}>
+                    <div className='col-md-5'>
+                        <h1 className='text-center'><b>{room.name}</b></h1>
+                        <img src={room.imageurls[0]} className='big-img' />
                     </div>
 
                     <div className='col-md-5'>
-                        <div style={{ textAlign: "right" }}>
-                            <h1>Booking Details</h1>
+                        <div style={{ textAlign: "center" }}>
+                            <h1><b>Booking Details</b></h1>
                             <hr />
-                            <b>
-                                <p>Name : {JSON.parse(localStorage.getItem('currentUser')).name}</p>
-                                <p>From Date : {match.params.fromdate}</p>
-                                <p>To Date : {match.params.todate}</p>
-                                <p>Max Count : {room.maxcount}</p>
 
-                            </b>
+                                <p><b>Name : </b>{JSON.parse(localStorage.getItem('currentUser')).name}</p>
+                                <p><b>From Date :</b> {match.params.fromdate}</p>
+                                <p><b>To Date : </b>{match.params.todate}</p>
+                                <p><b>Max Count : </b>{room.maxcount}</p>
+
                         </div>
 
-                        <div style={{ textAlign: "right" }}>
-                            <h1>Amount</h1>
+                        <div className="p-2" style={{ textAlign: "center" }}>
+                            <h1><b>AMOUNT</b></h1>
                             <hr />
-                            <b><p>Total Days : {totaldays}</p>
-                                <p>Rent per Day : {room.rentperday}</p>
-                                <p>Total Amount : {totalamount}</p></b>
+                                <p><b>Total Days :</b> {totaldays}</p>
+                                <p><b>Rent per Day :</b> {room.rentperday}</p>
+                                <p><b>Total Amount :</b> {totalamount}</p>
                         </div>
 
                         <div style={{ float: "right" }}>

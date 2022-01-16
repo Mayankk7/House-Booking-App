@@ -24,10 +24,10 @@ const ProfileScreen = () => {
     }, [])
 
     return (
-        <div className='m-5 container'>
+        <div className='m-5 container' >
             <Tabs defaultActiveKey="1">
                 <TabPane tab="Profile" key="1">
-                    <div className='bs'>
+                    <div className='bs ' style={{backgroundColor:"white"}}>
                     <b><h1>MY PROFILE</h1></b>
                     <br />
                     <h1>Name : {user.name}</h1>
@@ -92,13 +92,13 @@ export function MyBookings() {
 
     return (
         <div>
-            <div className='row'>
-                <div className='col-md-6'>
+            <div className='row ' >
+                <div className='col-md-6' >
                     {loading && <Loader />}
                     {bookings && (bookings.map(booking => {
 
                         return (
-                            <div className='bs'>
+                            <div className='bs' style={{backgroundColor:"white"}}>
                                 <p><b>{booking.room}</b></p>
                                 <p><b>BookingID</b> : {booking._id}</p>
                                 <p><b>CheckIn :</b> {booking.fromdate}</p>

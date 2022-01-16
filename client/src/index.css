@@ -9,6 +9,7 @@ body {
   font-family: 'Roboto Condensed', sans-serif!important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #414a4c!important;
 }
 
 code {
@@ -46,7 +47,7 @@ h1{
 }
 
 .big-img{
-  height:400px;
+  height:50vh!important;
   border-radius:5px!important;
 }
 

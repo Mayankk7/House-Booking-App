@@ -22,9 +22,9 @@ const Room = ({ room, fromdate, todate }) => {
                 <img src={room.imageurls[0]} className='smallimg' />
             </div>
             <div className='col-md-7'>
-                <b><h1>{room.name}</h1></b>
-                <p>Max Count : {room.maxcount}</p>
-                <p>Type : {room.type}</p>
+                <h1><b>{room.name}</b></h1>
+                <p><b>Max Count :</b> {room.maxcount}</p>
+                <p><b>Type :</b> {room.type}</p>
 
                 <div style={{ float: "right" }}>
 
