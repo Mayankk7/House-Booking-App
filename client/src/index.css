@@ -60,9 +60,9 @@ input , select, .ant-picker{
 }
 
 h2{
-  font-size:30px!important;
+  font-size:30px;
   padding:10px!important;
-  font-weight: bold!important;
+  font-weight: bold;
 }
 
 .dropdown-toggle{
@@ -75,4 +75,9 @@ h2{
 
 p{
   font-size: 15px!important;
+}
+
+.landing{
+  background-color: black;
+  height: 100vh;
 }

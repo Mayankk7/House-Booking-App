@@ -5,6 +5,14 @@ import Error from '../components/Error'
 import moment from 'moment'
 import StripeCheckout from 'react-stripe-checkout';
 import Swal from "sweetalert2"
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
+AOS.init(
+    {
+        duration:1000
+    }
+);
 
 const Bookingscreen = ({ match }) => {
 
@@ -71,7 +79,7 @@ const Bookingscreen = ({ match }) => {
       }
 
     return (
-        <div className='m-5'>
+        <div className='m-5' data-aos="flip-left">
 
             {loading ? <h1><Loader /></h1> : room ? (
 

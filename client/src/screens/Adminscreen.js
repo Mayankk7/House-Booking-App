@@ -135,6 +135,19 @@ export function Rooms() {
 
     }, [])
 
+    const deleteRoom = async(roomid) =>{
+
+        
+        try {
+            console.log(roomid)
+            await(axios.delete(`/api/rooms/deleteroom/${roomid}`))
+            console.log("Room Deleted")
+            window.location.reload();
+
+        } catch (error) {
+                console.log(error)    
+        }
+    }
 
     return (
         <div className='row justify-content-center'>
@@ -152,6 +165,7 @@ export function Rooms() {
                             <th>Rent Per Day</th>
                             <th>Max Count</th>
                             <th>Phone Number</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
 
@@ -165,6 +179,7 @@ export function Rooms() {
                                     <td>{room.rentperday}</td>
                                     <td>{room.maxcount}</td>
                                     <td>{room.phonenumber}</td>
+                                    <td><button className='btn btn-dark' onClick={()=>{deleteRoom({roomid : room._id})}}><i class="fas fa-trash-alt"></i></button></td>
                                 </tr>
                             })
                         )}
