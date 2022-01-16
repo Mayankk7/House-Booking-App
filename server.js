@@ -9,6 +9,7 @@ const usersRoute = require("./routes/userRoute")
 const bookingRoute = require("./routes/bookingsRoute")
 
 app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 
 app.use("/api/rooms", roomsRoute);
 app.use("/api/users", usersRoute);
