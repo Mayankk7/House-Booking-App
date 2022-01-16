@@ -3,13 +3,15 @@ const express = require("express");
 const app = express();
 
 const dbCOnfig = require("./db")
+const cors = require("cors")
 
 const roomsRoute = require("./routes/roomsRoute")
 const usersRoute = require("./routes/userRoute")
-const bookingRoute = require("./routes/bookingsRoute")
+const bookingRoute = require("./routes/bookingsRoute");
 
+app.use(express.urlencoded({extended: false}));
 app.use(express.json());
-app.use(express.urlencoded({extended: true}));
+app.use(cors({origin:true}))
 
 app.use("/api/rooms", roomsRoute);
 app.use("/api/users", usersRoute);
