@@ -3,6 +3,8 @@ import axios from "axios"
 import Loader from '../components/Loader'
 import Error from '../components/Error'
 import moment from 'moment'
+import StripeCheckout from 'react-stripe-checkout';
+import Swal from "sweetalert2"
 
 const Bookingscreen = ({ match }) => {
 
@@ -15,7 +17,7 @@ const Bookingscreen = ({ match }) => {
     const todate = moment(match.params.todate, "DD-MM-YYYY")
 
     const totaldays = moment.duration(todate.diff(fromdate)).asDays() + 1;
-    const [totalamount,settotalamount] = useState();
+    const [totalamount, settotalamount] = useState();
 
     useEffect(async () => {
         try {
@@ -33,25 +35,36 @@ const Bookingscreen = ({ match }) => {
         }
     }, [])
 
-    const bookRoom = async() => {
-        
+    const onToken = async(token) => {
+        console.log(token)
         const bookingDetails = {
 
             room,
-            userid:JSON.parse(localStorage.getItem('currentUser'))._id,
+            userid: JSON.parse(localStorage.getItem('currentUser'))._id,
             fromdate,
             todate,
             totalamount,
-            totaldays
+            totaldays,
+            token
 
         }
 
         try {
-            const result = await axios.post('/api/bookings/bookroom',bookingDetails)
+            setloading(true)
+            const result = await axios.post('/api/bookings/bookroom', bookingDetails)
+            setloading(false)
+            Swal.fire("Congratulations","Your Room Booked Successfully","success").then(result =>{
+                window.location.href="/bookings"
+            })
+
         } catch (error) {
+            setloading(false)
             console.log(error)
+            Swal.fire("OOPS", "Something went wrong","error")
+
         }
-    }
+      }
+
     return (
         <div className='m-5'>
 
@@ -85,7 +98,15 @@ const Bookingscreen = ({ match }) => {
                         </div>
 
                         <div style={{ float: "right" }}>
-                            <button className='btn btn-dark' onClick={bookRoom}>Pay Now</button>
+                            
+                            <StripeCheckout
+                                token={onToken}
+                                currency='INR'
+                                amount={totalamount * 100}
+                                stripeKey="pk_test_51KIT1CSCLQbR5TPEYSMp1ZhlJ5oTbV6ztzzCZ4AJU9Mt1EGO3oafVtu6Iahxg26ylt4KLe7kZZ7ySdrhn8WuLKgg00YPZzfPv3"
+                            >
+                                <button className='btn btn-dark'>Pay Now</button>
+                            </StripeCheckout>
                         </div>
                     </div>
                 </div>

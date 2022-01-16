@@ -75,9 +75,13 @@ const Homescreen = () => {
     return (
         <div className='container'>
 
-            <div className='row mt-5'>
+            <div className='row mt-5 bs'>
                 <div className='col-md-3'>
                     <RangePicker format="DD-MM-YYYY" onChange={filterbyDate} />
+                </div>
+
+                <div className='col-md-3'>
+                    <input type="form-control" placeholder='Search Rooms'/>
                 </div>
             </div>
 
