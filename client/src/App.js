@@ -6,6 +6,7 @@ import Homescreen from './screens/Homescreen';
 import Bookingscreen from './screens/Bookingscreen';
 import Loginscreen from './screens/Loginscreen';
 import Registerscreen from './screens/Registerscreen';
+import ProfileScreen from './screens/ProfileScreen';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/book/:roomid/:fromdate/:todate" exact component={Bookingscreen} />
         <Route path="/login" exact component={Loginscreen}/>
         <Route path="/register" exact component={Registerscreen}/>
+        <Route path="/profile" exact component={ProfileScreen}/>
       </BrowserRouter>
     </div>
   );

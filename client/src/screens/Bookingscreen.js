@@ -20,6 +20,11 @@ const Bookingscreen = ({ match }) => {
     const [totalamount, settotalamount] = useState();
 
     useEffect(async () => {
+
+        if(!localStorage.getItem('currentUser')){
+            window.location.reload='/login'
+        }
+
         try {
 
             setloading(true)
