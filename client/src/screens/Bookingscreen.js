@@ -30,7 +30,7 @@ const Bookingscreen = ({ match }) => {
     useEffect(async () => {
 
         if(!localStorage.getItem('currentUser')){
-            window.location.reload='/login'
+            window.location.href='/login'
         }
 
         try {

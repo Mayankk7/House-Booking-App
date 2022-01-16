@@ -116,6 +116,7 @@ export function Rooms() {
     const [rooms, setrooms] = useState();
     const [loading, setloading] = useState(false)
     const [error, seterror] = useState()
+    const [change,setchange] = useState(false)
 
     useEffect(async () => {
 
@@ -124,6 +125,7 @@ export function Rooms() {
             const response = (await axios.get("/api/rooms/getallrooms")).data
             setrooms(response)
             setloading(false)
+            setchange(false)
             console.log(response)
 
         } catch (error) {
@@ -133,19 +135,26 @@ export function Rooms() {
         }
 
 
-    }, [])
+    }, [change])
 
     const deleteRoom = async(roomid) =>{
 
         
         try {
-            console.log(roomid)
-            await(axios.delete(`/api/rooms/deleteroom/${roomid}`))
+            const id = roomid;
+            await axios.delete(`/api/rooms/deleteroom/${id}`).then(
+                res => {console.log(res)}
+            )
+            Swal.fire("Congrats","Room has been deleted Successfully", "success").then(
+                result=>{
+                    setchange(true);
+                }
+            )
             console.log("Room Deleted")
-            window.location.reload();
 
         } catch (error) {
-                console.log(error)    
+            console.log(error) 
+            Swal.fire("OOPS","Something went wrong!","error")   
         }
     }
 
@@ -179,7 +188,7 @@ export function Rooms() {
                                     <td>{room.rentperday}</td>
                                     <td>{room.maxcount}</td>
                                     <td>{room.phonenumber}</td>
-                                    <td><button className='btn btn-dark' onClick={()=>{deleteRoom({roomid : room._id})}}><i class="fas fa-trash-alt"></i></button></td>
+                                    <td><button className='btn btn-dark' onClick={()=>{deleteRoom(room._id)}}><i class="fas fa-trash-alt"></i></button></td>
                                 </tr>
                             })
                         )}
@@ -297,9 +306,7 @@ export function Addroom(){
             const result = (await axios.post('/api/rooms/addroom', newroom)).data
             console.log(result)
             setloading(false)    
-            Swal.fire('Congrats','Your Room has been Added' , 'success').then(result=>{
-                window.location.href="/home"
-            })
+            Swal.fire('Congrats','Your Room has been Added' , 'success')
 
         }catch(error){
             console.log(error)

@@ -41,11 +41,12 @@ router.post("/addroom", async(req,res) => {
     }
 })
 
-router.delete("/deleteroom/:roomid", async(room,res)=>{
+router.delete("/deleteroom/:id", async(req,res)=>{
 
     try {
-        const roomid = req.params
-        await Room.findByIdAndDelete({roomid});
+        const roomid = req.params.id
+        console.log(roomid)
+        await Room.findByIdAndDelete({_id : roomid});
         res.send("Room Deleted Successfully");
     } catch (error) {
         return res.status(404).json({error})

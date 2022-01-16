@@ -17,7 +17,7 @@ const Room = ({ room, fromdate, todate }) => {
     const handleShow = () => setShow(true);
 
     return (
-        <div className='row bs ' data-aos="fade-up">
+        <div className='row bs ' data-aos="fade-up" style={{backgroundColor:"white"}}>
             <div className='col-md-4'>
                 <img src={room.imageurls[0]} className='smallimg' />
             </div>

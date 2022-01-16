@@ -99,7 +99,7 @@ const Homescreen = () => {
     return (
         <div className='container'>
 
-            <div className='row mt-5 bs'>
+            <div className='row mt-5 bs' style={{backgroundColor:"white"}}>
                 <div className='col-md-3'>
                     <RangePicker format="DD-MM-YYYY" onChange={filterbyDate} />
                 </div>
