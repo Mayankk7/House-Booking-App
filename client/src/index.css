@@ -28,6 +28,10 @@ code {
   margin-left:auto!important;
 }
 
+.dropdown{
+  margin-left:auto!important;
+}
+
 .smallimg{
   height:200px;
   width:100% !important;
@@ -129,7 +133,8 @@ p{
 
 @media (max-width:900px) {
   .landing {
-    width: 100vw;
+    width: 103vw!important;
+
   }
   .h2-landing{
     font-size:8vh!important;

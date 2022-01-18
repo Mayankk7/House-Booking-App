@@ -22,7 +22,7 @@ const Room = ({ room, fromdate, todate }) => {
                 <img src={room.imageurls[0]} className='smallimg' />
             </div>
             <div className='col-md-7'>
-                <h1><b>{room.name}</b></h1>
+                <h1 className='mt-2'><b>{room.name}</b></h1>
                 <p><b>Max Count :</b> {room.maxcount}</p>
                 <p><b>Type :</b> {room.type}</p>
 
@@ -38,7 +38,7 @@ const Room = ({ room, fromdate, todate }) => {
                 </div>
             </div>
 
-            <Modal show={show} onHide={handleClose} size='lg' className='mx-3 mt-3' style={{transition:"0.5s", borderRadius:"5px"}} >
+            <Modal show={show} onHide={handleClose} size='lg' className='mt-3' style={{transition:"0.5s", borderRadius:"5px"}} >
                 <Modal.Header style={{backgroundColor:"#232b2b",borderRadius:"5px"}}>
                     <Modal.Title className='text-center' style={{color:"white"}}><b>{room.name}</b></Modal.Title>
                 </Modal.Header>
