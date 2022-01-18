@@ -81,3 +81,28 @@ p{
 .landing{
   height: 100vh;
 }
+
+.h2-landing{
+  color:white!important;
+  font-size:15vh!important;
+}
+
+
+@media (max-width:300px) {
+  .navbar-toggler, .navbar-brand{
+    margin:0px!important;
+  }
+
+  .navbar{
+    justify-content: center!important;
+  }
+}
+
+@media (max-width:900px) {
+  .landing {
+    width: 100vw;
+  }
+  .h2-landing{
+    font-size:8vh!important;
+  }
+}

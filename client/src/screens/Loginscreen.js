@@ -48,7 +48,7 @@ const Loginscreen = () => {
                 <div className='col-md-5 bs mt-5 ' style={{backgroundColor:"white"}}>
                     {error && (<Error message="Invalid Credentials"/>)}
                     <div>
-                        <h2 className='text-center'>LOGIN</h2>
+                        <h2 className='text-center' style={{fontWeight:"bolder"}}>LOGIN</h2>
                         <input className='form-control ' type="text" placeholder='Email' value={email} onChange={(e) => { setemail(e.target.value) }}/>
                         <input className='form-control ' type="text" placeholder='Password' value={password} onChange={(e) => { setpassword(e.target.value) }}/>
                         

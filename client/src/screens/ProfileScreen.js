@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { Tabs } from 'antd';
 import axios from 'axios';
 import Loader from '../components/Loader'
-import Error from '../components/Error'
 import Swal from "sweetalert2"
 import { Tag, Divider } from 'antd';
 

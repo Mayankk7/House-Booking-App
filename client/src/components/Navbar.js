@@ -6,12 +6,12 @@ const Navbar = () => {
 
     const logout = () => {
         localStorage.removeItem('currentUser');
-        window.location.href="/login"
+        window.location.href="/loginform"
     }
     return (
         <div>
             <nav class="navbar navbar-expand-lg bg-dark">
-                <a class="navbar-brand mx-5" href="/home">ROOMBOOK</a>
+                <a class="navbar-brand mx-5" href="/home">ROOMZAPPY</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon mx-5"><i class="fa fa-bars" style={{color:"white"}}></i></span>
                 </button>
@@ -30,10 +30,10 @@ const Navbar = () => {
                         </>) : (
                             <>
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="/register">Register</a>
+                                    <a class="nav-link" href="/registerform">Register</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/login">Login</a>
+                                    <a class="nav-link" href="/loginform">Login</a>
                                 </li>
                             </>
                         )}
