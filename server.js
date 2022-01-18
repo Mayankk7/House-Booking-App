@@ -4,6 +4,7 @@ const app = express();
 
 const dbCOnfig = require("./db")
 const cors = require("cors")
+const path = require('path')
 
 const roomsRoute = require("./routes/roomsRoute")
 const usersRoute = require("./routes/userRoute")
