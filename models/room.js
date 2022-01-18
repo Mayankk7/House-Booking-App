@@ -6,8 +6,9 @@ const roomSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    maxCount : {
+    maxcount : {
         type: Number,
+        required:true
     },
     phonenumber : {
         type : Number,

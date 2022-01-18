@@ -20,12 +20,13 @@ const Addroom = () => {
 
     const addRoom = async() => {
 
+        console.log(maxcount)
         const newroom = {
             name,
-            rentperday,
             maxcount,
-            description,
             phonenumber,
+            rentperday,
+            description,
             type,
             imageurls:[
                 imageurl1,
@@ -54,7 +55,7 @@ const Addroom = () => {
     return (
         <div className='row justify-content-center m-5'>
 
-            <div className='col-md-5'>
+            <div className='col-md-5' >
                 {loading && <Loader/>}
                 <input className='form-control' text="text" placeholder='Room Name'
                     value={name} onChange={(e)=>{setname(e.target.value)}}
