@@ -69,8 +69,9 @@ const Registerscreen = () => {
                         <input className='form-control ' type="text" placeholder='Email' value={email} onChange={(e) => { setemail(e.target.value) }}/>
                         <input className='form-control ' type="text" placeholder='Password' value={password} onChange={(e) => { setpassword(e.target.value) }}/>
                         <input className='form-control ' type="text" placeholder='Confirm Password' value={cpassword} onChange={(e) => { setcpassword(e.target.value) }}/>
-                        
-                        <button className='btn btn-dark mt-5' style={{float:"right"}} onClick={register}>Register</button>
+                        <p className='mt-3'>Already have an account ? <a href='/login' style={{textDecoration:"underline"}}>Login here</a></p>
+
+                        <button className='btn btn-dark mt-3' style={{float:"right"}} onClick={register}>Register</button>
                     </div>
                 </div>
             </div>

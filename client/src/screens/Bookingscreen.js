@@ -89,7 +89,7 @@ const Bookingscreen = ({ match }) => {
                         <img src={room.imageurls[0]} className='big-img' />
                     </div>
 
-                    <div className='col-md-5'>
+                    <div className='col-md-5 mt-2'>
                         <div style={{ textAlign: "center" }}>
                             <h1><b>Booking Details</b></h1>
                             <hr />

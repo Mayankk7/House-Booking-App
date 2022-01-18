@@ -51,8 +51,8 @@ const Loginscreen = () => {
                         <h2 className='text-center' style={{fontWeight:"bolder"}}>LOGIN</h2>
                         <input className='form-control ' type="text" placeholder='Email' value={email} onChange={(e) => { setemail(e.target.value) }}/>
                         <input className='form-control ' type="text" placeholder='Password' value={password} onChange={(e) => { setpassword(e.target.value) }}/>
-                        
-                        <button className='btn btn-dark mt-5' style={{float:"right"}} onClick={login}>Login</button>
+                        <p className='mt-3'>Don't have an account ? <a href='/register' style={{textDecoration:"underline"}}>Register here</a></p>
+                        <button className='btn btn-dark mt-3' style={{float:"right"}} onClick={login}>Login</button>
                     </div>
                 </div>
             </div>
