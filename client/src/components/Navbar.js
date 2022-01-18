@@ -6,7 +6,7 @@ const Navbar = () => {
 
     const logout = () => {
         localStorage.removeItem('currentUser');
-        window.location.href="/loginform"
+        window.location.href="/login"
     }
     return (
         <div>
@@ -30,10 +30,10 @@ const Navbar = () => {
                         </>) : (
                             <>
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="/registerform">Register</a>
+                                    <a class="nav-link" href="/register">Register</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/loginform">Login</a>
+                                    <a class="nav-link" href="/login">Login</a>
                                 </li>
                             </>
                         )}

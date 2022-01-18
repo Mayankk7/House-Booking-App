@@ -99,7 +99,7 @@ const Homescreen = () => {
     return (
         <div className='container'>
 
-            <div className='row mt-5 bs' style={{backgroundColor:"white"}}>
+            <div className='row mt-5 bs2 m-3' style={{backgroundColor:"white"}}>
                 <div className='col-md-3'>
                     <RangePicker format="DD-MM-YYYY" onChange={filterbyDate} />
                 </div>
@@ -121,7 +121,7 @@ const Homescreen = () => {
             </div>
 
 
-            <div className='row justify-content-center mt-5'>
+            <div className='row justify-content-center mt-5 m-3'>
                 {loading ? (<Loader />) : (rooms.map(room => {
                     return <div className='col-md-9 mt-2'>
                         <Room room={room} fromdate={fromdate} todate={todate} />

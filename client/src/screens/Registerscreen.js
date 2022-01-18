@@ -59,8 +59,8 @@ const Registerscreen = () => {
         
         
 
-            <div className='row justify-content-center mt-5' data-aos="fade-in">
-                <div className='col-md-5 bs mt-5 ' style={{backgroundColor:"white"}}> 
+            <div className='row justify-content-center mt-5  m-3' data-aos="fade-in">
+                <div className='col-md-5 bs4 mt-5 ' style={{backgroundColor:"white"}}> 
                 {success && <Success message="Registration Successful"/>}
                 {error && <Error/>}
                     <div>

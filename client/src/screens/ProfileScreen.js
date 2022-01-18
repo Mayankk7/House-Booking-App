@@ -23,15 +23,15 @@ const ProfileScreen = () => {
     }, [])
 
     return (
-        <div className='m-5 container' >
+        <div className='m-5' >
             <Tabs defaultActiveKey="1">
                 <TabPane tab="Profile" key="1">
-                    <div className='bs ' style={{backgroundColor:"white"}}>
-                    <b><h1>MY PROFILE</h1></b>
+                    <div className='bs' style={{backgroundColor:"white"}}>
+                    <b><h1 style={{fontWeight:"bolder"}}>MY PROFILE</h1></b>
                     <br />
-                    <h1>Name : {user.name}</h1>
-                    <h1>Email : {user.email}</h1>
-                    <h1>IsAdmin : {user.isAdmin ? 'YES' : 'NO'}</h1>
+                    <h1><b>Name :</b> {user.name}</h1>
+                    <h1><b>Email :</b> {user.email}</h1>
+                    <h1><b>IsAdmin :</b> {user.isAdmin ? 'YES' : 'NO'}</h1>
                     </div>
                 </TabPane>
                 <TabPane tab="Bookings" key="2">
@@ -91,13 +91,13 @@ export function MyBookings() {
 
     return (
         <div>
-            <div className='row ' >
-                <div className='col-md-6' >
+            <div className='row' >
+                <div className='col-md-6' style={{display:'flex', flexWrap:"wrap"}}>
                     {loading && <Loader />}
                     {bookings && (bookings.map(booking => {
 
                         return (
-                            <div className='bs' style={{backgroundColor:"white"}}>
+                            <div className='bs mx-3' style={{backgroundColor:"white"}}>
                                 <p><b>{booking.room}</b></p>
                                 <p><b>BookingID</b> : {booking._id}</p>
                                 <p><b>CheckIn :</b> {booking.fromdate}</p>

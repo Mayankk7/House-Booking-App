@@ -38,11 +38,11 @@ const Room = ({ room, fromdate, todate }) => {
                 </div>
             </div>
 
-            <Modal show={show} onHide={handleClose} size='lg'>
-                <Modal.Header closeButton>
-                    <Modal.Title className='text-center'>{room.name}</Modal.Title>
+            <Modal show={show} onHide={handleClose} size='lg' className='mx-3 mt-3' style={{transition:"0.5s", borderRadius:"5px"}} >
+                <Modal.Header style={{backgroundColor:"#232b2b",borderRadius:"5px"}}>
+                    <Modal.Title className='text-center' style={{color:"white"}}><b>{room.name}</b></Modal.Title>
                 </Modal.Header>
-                <Modal.Body>
+                <Modal.Body style={{backgroundColor:"whitesmoke"}}>
                     <Carousel>
                         {
                             room.imageurls.map(url => {
@@ -56,13 +56,11 @@ const Room = ({ room, fromdate, todate }) => {
                             })
                         }
                     </Carousel>
-                    <p className='mt-5'>{room.description}</p>
+                    <p className='mt-5' style={{color:"black"}}>{room.description}</p>
                 </Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
+                    <Button variant="secondary" className='btn btn-dark' style={{float:"right"}} onClick={handleClose}>
                         Close
                     </Button>
-                </Modal.Footer>
             </Modal>
         </div>
     )

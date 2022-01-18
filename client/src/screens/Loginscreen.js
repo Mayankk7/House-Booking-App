@@ -44,8 +44,8 @@ const Loginscreen = () => {
     return (
         <div>
             {loading && (<Loader/>)}
-            <div className='row justify-content-center mt-5' data-aos="fade-in">
-                <div className='col-md-5 bs mt-5 ' style={{backgroundColor:"white"}}>
+            <div className='row justify-content-center mt-5  mx-3' data-aos="fade-in">
+                <div className='col-md-5 bs4 mt-5' style={{backgroundColor:"white"}}>
                     {error && (<Error message="Invalid Credentials"/>)}
                     <div>
                         <h2 className='text-center' style={{fontWeight:"bolder"}}>LOGIN</h2>
