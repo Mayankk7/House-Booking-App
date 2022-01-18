@@ -75,6 +75,12 @@ h1{
 .big-img{
   height:50vh!important;
   border-radius:5px!important;
+  width: 35vw!important;
+}
+
+.big-img1{
+  height:50vh!important;
+  border-radius:5px!important;
 }
 
 input , select, .ant-picker{
@@ -140,3 +146,11 @@ p{
     font-size:8vh!important;
   }
 }
+
+@media (max-width:768px) {
+  .big-img{
+    width:70vw!important;
+  }
+}
+
+

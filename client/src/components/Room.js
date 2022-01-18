@@ -48,7 +48,7 @@ const Room = ({ room, fromdate, todate }) => {
                             room.imageurls.map(url => {
                                 return <Carousel.Item>
                                     <img
-                                        className="d-block w-100 big-img"
+                                        className="d-block w-100 big-img1"
                                         src={url}
                                     />
 
