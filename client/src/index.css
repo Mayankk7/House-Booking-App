@@ -126,7 +126,6 @@ p{
   font-size:15vh!important;
 }
 
-
 @media (max-width:300px) {
   .navbar-toggler, .navbar-brand{
     margin:0px!important;
