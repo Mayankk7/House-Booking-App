@@ -1,59 +1,22 @@
 const express = require("express")
 const router = express.Router();
-const User = require("../models/user")
+const { getUsers } = require("../controllers/user");
+const { registerUser, loginUser } = require("../controllers/auth")
 
-router.post("/register", async(req,res)=>{
 
-    const newuser = new User({name:req.body.name,
-        email:req.body.email,
-        password:req.body.password
-    })
+//Auth Route
+//route to allows a user to register
+//@public route /register
+router.post("/register", registerUser)
 
-    try {
-        const user = await newuser.save();
-        res.send("User Registered Successfully")
+//User Route
+//route to login a user using email and password 
+//@protected route validates only registered user
+router.post("/login", loginUser)
 
-    } catch (error) {
-        return res.status(400).json({error});
-    }
-})
-
-router.post("/login", async(req,res)=>{
-
-    const {email,password} = req.body
-    
-    try {
-        const user = await User.findOne({email:email, password:password})
-        if(user){
-            const temp = {
-                name:user.name,
-                email: user.email,
-                isAdmin : user.isAdmin,
-                _id:user._id
-            }
-            res.send(temp)
-        }else{
-            return res.status(400).json({message: "Login Failed"})
-        }
-        
-    } catch (error) {
-        return res.status(400).json({error});
-
-    }
-
-})  
-
-router.get('/getallusers', async(req,res) => {
-
-    try {
-
-        const users = await User.find({})
-        res.send(users);
-
-    } catch (error) {
-        return res.status(400).json({error})
-
-    }
-})
+//User Route 
+//route to get all users on home screen 
+//@public route /getallusers
+router.get('/getallusers', getUsers)
 
 module.exports = router;
