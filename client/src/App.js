@@ -11,21 +11,26 @@ import Adminscreen from './screens/Adminscreen';
 import Loadingscreen from './screens/Loadingscreen';
 import Forgotscreen from './screens/Forgotscreen';
 import Resetscreen from './screens/Resetscreen';
+import { useEffect } from 'react';
 
 function App() {
+
   return (
     <div className="App">
-      <Navbar />
       <BrowserRouter>
-        <Route path="/home" exact component={Homescreen} />
-        <Route path="/book/:roomid/:fromdate/:todate" exact component={Bookingscreen} />
-        <Route path="/login" exact component={Loginscreen} />
-        <Route path="/register" exact component={Registerscreen} />
-        <Route path="/profile" exact component={ProfileScreen} />
-        <Route path="/admin" exact component={Adminscreen} />
-        <Route path="/forgot" exact component={Forgotscreen} />
-        <Route path="/reset/:id" exact component={Resetscreen} />
-        <Route path="/" exact component={Loadingscreen} />
+        <div>
+          <Navbar />
+          <Route path="/" exact component={Loadingscreen} />
+          <Route path="/home" exact component={Homescreen} />
+          <Route path="/book/:roomid/:fromdate/:todate" exact component={Bookingscreen} />
+          <Route path="/login" exact component={Loginscreen} />
+          <Route path="/register" exact component={Registerscreen} />
+          <Route path="/profile" exact component={ProfileScreen} />
+          <Route path="/admin" exact component={Adminscreen} />
+          <Route path="/forgot" exact component={Forgotscreen} />
+          <Route path="/reset/:id" exact component={Resetscreen} />
+        </div>
+
       </BrowserRouter>
     </div>
   );

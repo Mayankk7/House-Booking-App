@@ -73,7 +73,9 @@ const BookRoom = async (req, res) => {
             Hope you have a great vacation ! 
             Thankyou for booking with RoomsZappy. 
             `
-            sendMail(bookeduser, output)
+
+            let subject = "Booking Done Successfully"
+            sendMail(bookeduser, output, subject)
 
         }
 

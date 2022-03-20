@@ -2,7 +2,7 @@ const nodemailer = require("nodemailer")
 
 
 //function that sends mail to the user 
-const sendMail = async (email, output) => {
+const sendMail = async (email, output, subject) => {
     var pas = "nananani"
     let transporter = nodemailer.createTransport({
         service: "gmail",
@@ -22,7 +22,7 @@ const sendMail = async (email, output) => {
     let info = await transporter.sendMail({
         from: '"RoomsZappy" mayank26032@gmail.com ', // sender address
         to: email, // list of receivers
-        subject: "Account Created Successfully", // Subject line
+        subject: subject, // Subject line
         text: "Welcome to RoomZappy", // plain text body
         html: output, // html body
     });

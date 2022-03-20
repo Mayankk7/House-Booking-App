@@ -6,6 +6,7 @@ import Loader from "../components/Loader"
 import Swal from "sweetalert2"
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import validator from "validator"
 
 AOS.init(
     {
@@ -26,6 +27,9 @@ const Registerscreen = () => {
 
     const register = async () => {
 
+        if (!validator.isEmail(email)) {
+            Swal.fire("Enter Valid Email")
+        }
         if (password === cpassword) {
             const user = {
                 name, email, password, cpassword
@@ -50,7 +54,7 @@ const Registerscreen = () => {
                 Swal.fire("OOPS", "Something went wrong", "error")
             }
         } else {
-            alert("Password doesn't match")
+            Swal.fire("Password Doesn't Match")
         }
     }
     return (
@@ -66,7 +70,10 @@ const Registerscreen = () => {
                     <div>
                         <h2 className='text-center' style={{ fontWeight: "bolder" }}>REGISTER</h2>
                         <input className='form-control ' type="text" placeholder='Name' value={name} onChange={(e) => { setname(e.target.value) }} />
-                        <input className='form-control ' type="text" placeholder='Email' value={email} onChange={(e) => { setemail(e.target.value) }} />
+                        <input className='form-control ' type="text" placeholder='Email' value={email} onChange={(e) => {
+                            setemail(e.target.value)
+
+                        }} />
                         <input className='form-control ' type="password" placeholder='Password' value={password} onChange={(e) => { setpassword(e.target.value) }} />
                         <input className='form-control ' type="password" placeholder='Confirm Password' value={cpassword} onChange={(e) => { setcpassword(e.target.value) }} />
                         <p className='mt-3'>Already have an account ? <a href='/login' style={{ textDecoration: "underline" }}>Login here</a></p>
