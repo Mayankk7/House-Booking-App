@@ -53,7 +53,7 @@ const Loginscreen = () => {
                         <input className='form-control ' type="password" placeholder='Password' value={password} onChange={(e) => { setpassword(e.target.value) }} />
                         <p className='mt-3'>Don't have an account ? <a href='/register' style={{ textDecoration: "underline" }}>Register here</a></p>
                         <button className='btn btn-dark mt-3' style={{ float: "right" }} onClick={login}>Login</button>
-                        <p className='mt-3'>Trouble with Sign In ? <a href="#" style={{ textDecoration: "underline" }}>Forgot Password</a></p>
+                        <p className='mt-3'>Trouble with Sign In ? <a href="/forgot" style={{ textDecoration: "underline" }}>Forgot Password</a></p>
 
                     </div>
                 </div>

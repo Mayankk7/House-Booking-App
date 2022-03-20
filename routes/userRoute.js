@@ -1,7 +1,7 @@
 const express = require("express")
 const router = express.Router();
 const { getUsers } = require("../controllers/user");
-const { registerUser, loginUser } = require("../controllers/auth")
+const { registerUser, loginUser, resetPassword, forgotPassword } = require("../controllers/auth")
 
 
 //Auth Route
@@ -9,7 +9,7 @@ const { registerUser, loginUser } = require("../controllers/auth")
 //@public route /register
 router.post("/register", registerUser)
 
-//User Route
+//Auth Route
 //route to login a user using email and password 
 //@protected route validates only registered user
 router.post("/login", loginUser)
@@ -18,5 +18,17 @@ router.post("/login", loginUser)
 //route to get all users on home screen 
 //@public route /getallusers
 router.get('/getallusers', getUsers)
+
+
+//Auth Route 
+//route to generate a reset password request 
+//@public route
+router.post('/forgot', forgotPassword)
+
+
+//Auth Route
+//route to allow a user to reset password 
+//@protected route 
+router.patch('/reset/:id', resetPassword)
 
 module.exports = router;

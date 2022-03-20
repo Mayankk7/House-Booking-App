@@ -9,6 +9,8 @@ import Registerscreen from './screens/Registerscreen';
 import ProfileScreen from './screens/ProfileScreen';
 import Adminscreen from './screens/Adminscreen';
 import Loadingscreen from './screens/Loadingscreen';
+import Forgotscreen from './screens/Forgotscreen';
+import Resetscreen from './screens/Resetscreen';
 
 function App() {
   return (
@@ -17,11 +19,13 @@ function App() {
       <BrowserRouter>
         <Route path="/home" exact component={Homescreen} />
         <Route path="/book/:roomid/:fromdate/:todate" exact component={Bookingscreen} />
-        <Route path="/login" exact component={Loginscreen}/>
-        <Route path="/register" exact component={Registerscreen}/>
-        <Route path="/profile" exact component={ProfileScreen}/>
-        <Route path="/admin" exact component={Adminscreen}/>
-        <Route path="/" exact component={Loadingscreen}/>
+        <Route path="/login" exact component={Loginscreen} />
+        <Route path="/register" exact component={Registerscreen} />
+        <Route path="/profile" exact component={ProfileScreen} />
+        <Route path="/admin" exact component={Adminscreen} />
+        <Route path="/forgot" exact component={Forgotscreen} />
+        <Route path="/reset/:id" exact component={Resetscreen} />
+        <Route path="/" exact component={Loadingscreen} />
       </BrowserRouter>
     </div>
   );

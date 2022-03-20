@@ -1,5 +1,7 @@
 const nodemailer = require("nodemailer")
 
+
+//function that sends mail to the user 
 const sendMail = async (email, output) => {
     var pas = "nananani"
     let transporter = nodemailer.createTransport({

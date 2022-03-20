@@ -2,8 +2,9 @@ const Booking = require("../models/booking")
 const moment = require("moment")
 const { v4: uuidv4 } = require('uuid');
 const Room = require("../models/room")
+const User = require("../models/user")
 const stripe = require("stripe")('sk_test_51KIT1CSCLQbR5TPEcrSguI802lHr4JnLdX7DRHuI9cvJDmwH2BdmdMNXdeMYfLUlAV6zORXfuAf6FsvGtHPBO7aM00Qxh6VdAl')
-
+const sendMail = require("../utils/mailer")
 
 //function that allows a user to book a room 
 const BookRoom = async (req, res) => {
@@ -61,6 +62,18 @@ const BookRoom = async (req, res) => {
             await roomtemp.save();
 
             console.log("Room Booked ");
+
+            let id = newbooking.userid;
+
+            const bookeduser = await User.findOneById({ id })
+
+            let output = `
+            <h1>Congratulations !</h1>
+            Your stay in ${bookeduser.name} has been confirmed from ${newbooking.fromdate} to ${newbooking.todate}.
+            Hope you have a great vacation ! 
+            Thankyou for booking with RoomsZappy. 
+            `
+            sendMail(bookeduser, output)
 
         }
 
