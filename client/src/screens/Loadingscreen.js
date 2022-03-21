@@ -11,7 +11,7 @@ AOS.init(
 
 const Loadingscreen = () => {
     return (
-        <div className='row landing justify-content-center bg-dark'>
+        <div className='row landing justify-content-center bg-dark' style={{ height: "92vh" }}>
             <div className='col-md-9 my-auto text-center' style={{ borderRight: '8px solid white' }}>
 
                 <h2 data-aos="zoom-in" className="h2-landing"><span ><strong>R</strong></span>oom<span><strong>Z</strong></span>appy</h2>

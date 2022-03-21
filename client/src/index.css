@@ -130,6 +130,26 @@ p{
   font-size:15vh!important;
 }
 
+.fa-facebook-f:hover{
+  color: #3b5998!important;
+}
+
+.fa-twitter:hover{
+  color:#00acee!important;
+}
+
+.fa-instagram:hover{
+  color:#8a3ab9!important;
+}
+
+.fa-linkedin:hover{
+  color:#0077b5!important;
+}
+
+.fa-github:hover{
+  color:#171515!important;
+}
+
 @media (max-width:300px) {
   .navbar-toggler, .navbar-brand{
     margin:0px!important;
