@@ -97,7 +97,7 @@ const Homescreen = () => {
     }
 
     return (
-        <div className='container'>
+        <div className='container' >
 
             <div className='row mt-5 bs2 m-3' style={{ backgroundColor: "white" }}>
                 <div className='col-md-3'>
@@ -121,9 +121,9 @@ const Homescreen = () => {
             </div>
 
 
-            <div className='row justify-content-center mt-5 m-3 mb-5'>
+            <div className='row justify-content-center mt-5 m-3'  >
                 {loading ? (<Loader />) : (rooms.map(room => {
-                    return <div className='col-md-9 mt-2'>
+                    return <div className='col-md-9 mt-2' style={{ marginBottom: "10vh" }}>
                         <Room room={room} fromdate={fromdate} todate={todate} />
                     </div>;
                 }))}

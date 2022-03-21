@@ -17,15 +17,15 @@ const Navbar = () => {
                 <a class="navbar-brand mx-5" href="/home"><span ><strong>R</strong></span>oom<span><strong>Z</strong></span>appy</a>
 
                 {user ? (<>
-                    <div class="dropdown mx-5" >
+                    <div class="dropdown" style={{ marginRight: "10vh" }}>
                         <button class="btn btn-secondary dropdown-toggle" type="button" style={{ marginLeft: "auto" }} id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i className='fa fa-user mx-2'></i>{user.name}
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <div style={{ marginLeft: "25px" }}>
-                                <img src={"https://ui-avatars.com/api/?rounded=true&name=" + user.name} />
+                            <div style={{ marginLeft: "40px" }}>
+                                <img src={"https://avatar.oxro.io/avatar.svg?background=f39c12&rounded=300&name=" + user.name} style={{ width: "10vh" }} />
                             </div>
-                            <a class="dropdown-item" href="/profile">Profile</a>
+                            <a class="dropdown-item mt-2" href="/profile">Profile</a>
                             <a class="dropdown-item" href="#" onClick={logout}>Logout</a>
                         </div>
                     </div>

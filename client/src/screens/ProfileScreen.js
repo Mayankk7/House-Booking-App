@@ -24,21 +24,38 @@ const ProfileScreen = () => {
             <Tabs defaultActiveKey="1" size={"large"} style={{ color: "white", height: "70vh" }} tabPosition="top" className='tabshead'>
                 <TabPane tab="Profile" key="1" style={{ color: "black" }}>
                     <div className='bs tabs' >
-                        <b><h1 style={{ fontWeight: "bolder", padding: "2vh" }}>MY PROFILE</h1></b>
+                        <b><h1 style={{ fontWeight: "bolder", padding: "1vh", textDecoration: "underline" }}>Edit your Profile</h1></b>
                         <br />
                         <div className='profile'>
                             <div>
-                                <div style={{ width: "40vh", padding: "2vh" }}>
+                                <div style={{ width: "40vh", padding: "0.5vh" }}>
                                     <label>Name</label>
-                                    <input type="name" defaultValue={user.name} disabled />
+                                    <div style={{ display: "flex" }}>
+                                        <input type="name" defaultValue={user.name} disabled />
+                                        <button className='btn btn-dark' style={{ height: "6vh", marginTop: "2vh" }}><i class="fa-solid fa-pen" ></i></button>
+                                    </div>
+
+
                                 </div>
-                                <div style={{ width: "40vh", padding: "2vh" }}>
+                                <div style={{ width: "40vh", padding: "0.5vh" }}>
                                     <label>Email</label>
-                                    <input type="name" defaultValue={user.email} disabled />
+                                    <div style={{ display: "flex" }}>
+                                        <input type="name" defaultValue={user.email} disabled />
+                                        <button className='btn btn-dark' style={{ height: "6vh", marginTop: "2vh" }}><i class="fa-solid fa-pen" ></i></button>
+                                    </div>
+
+                                </div>
+                                <div style={{ width: "40vh", padding: "0.5vh" }}>
+                                    <label>Phone</label>
+                                    <div style={{ display: "flex" }}>
+                                        <input type="number" autoComplete='false' />
+                                        <button className='btn btn-dark' style={{ height: "6vh", marginTop: "2vh" }}><i class="fa-solid fa-pen" ></i></button>
+                                    </div>
+
                                 </div>
                             </div>
                             <div>
-                                <img src={"https://ui-avatars.com/api/?rounded=true&name=" + user.name}
+                                <img src={"https://avatar.oxro.io/avatar.svg?background=f39c12&rounded=300&name=" + user.name}
                                     style={{ width: "15vw", marginLeft: "15vh" }} />
                             </div>
                         </div>

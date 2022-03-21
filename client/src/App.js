@@ -11,7 +11,7 @@ import Adminscreen from './screens/Adminscreen';
 import Loadingscreen from './screens/Loadingscreen';
 import Forgotscreen from './screens/Forgotscreen';
 import Resetscreen from './screens/Resetscreen';
-import Footer from "./components/Footer"
+import Footer from "./components/Footer";
 import { useEffect } from 'react';
 
 function App() {
@@ -31,6 +31,7 @@ function App() {
           <Route path="/forgot" exact component={Forgotscreen} />
           <Route path="/reset/:id" exact component={Resetscreen} />
         </div>
+
         <div style={{ position: "fixed", bottom: "0", left: "0", right: "0" }}>
           <Footer />
         </div>

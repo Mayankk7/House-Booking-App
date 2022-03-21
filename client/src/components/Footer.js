@@ -1,16 +1,15 @@
 import React from 'react'
+import KommunicateChat from "../chat"
 
 const Footer = () => {
     return (
-        <footer class="text-center text-lg-start bg-dark text-muted">
+        <footer class="text-center text-lg-start bg-dark text-muted bg-bottom" style={{ height: "12vh" }}>
 
             <section
-                class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+                class="d-flex justify-content-center justify-content-lg-between p-4 "
             >
 
-                <div class="me-5 d-none d-lg-block">
-                    <span style={{ color: 'white' }}>Get connected with us on social networks:</span>
-                </div>
+
 
 
                 <div>
@@ -31,6 +30,12 @@ const Footer = () => {
                     </a>
                 </div>
 
+                <div class="me-5 d-none d-lg-block">
+                    <span style={{ color: 'white' }}>Copyright &copy; Mayank</span>
+                </div>
+                <div>
+                    <KommunicateChat />
+                </div>
             </section >
         </footer >
 

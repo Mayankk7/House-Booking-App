@@ -27,16 +27,16 @@ const Adminscreen = () => {
         <div className='m-5 bs ' style={{ backgroundColor: "white" }}>
             <h2 className='text-center' style={{ fontSize: '30px' }}><b>Admin Panel</b></h2>
             <Tabs defaultActiveKey="1">
-                <TabPane tab="Bookings" key="1">
+                <TabPane tab="Bookings" key="1" style={{ marginBottom: "15vh" }}>
                     <Bookings />
                 </TabPane>
-                <TabPane tab="Rooms" key="2">
+                <TabPane tab="Rooms" key="2" style={{ marginBottom: "15vh" }}>
                     <Rooms />
                 </TabPane>
-                <TabPane tab="Add Rooms" key="3">
+                <TabPane tab="Add Rooms" key="3" style={{ marginBottom: "15vh" }}>
                     <Addroom />
                 </TabPane>
-                <TabPane tab="Users" key="4">
+                <TabPane tab="Users" key="4" style={{ marginBottom: "15vh" }}>
                     <Users />
                 </TabPane>
             </Tabs>

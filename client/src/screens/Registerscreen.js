@@ -30,31 +30,33 @@ const Registerscreen = () => {
         if (!validator.isEmail(email)) {
             Swal.fire("Enter Valid Email")
         }
-        if (password === cpassword) {
-            const user = {
-                name, email, password, cpassword
+        else {
+            if (password === cpassword) {
+                const user = {
+                    name, email, password, cpassword
+                }
+
+                try {
+                    setloading(true);
+                    const result = (await axios.post("/api/users/register", user)).data
+                    setloading(false)
+                    setsuccess(true);
+                    Swal.fire("Congratulations", "You have registered successfully", "success");
+
+                    setname('');
+                    setemail('');
+                    setpassword('');
+                    setcpassword('');
+
+                } catch (error) {
+                    setloading(false);
+                    console.log(error)
+                    seterror(true)
+                    Swal.fire("OOPS", "Something went wrong", "error")
+                }
+            } else {
+                Swal.fire("Password Doesn't Match")
             }
-
-            try {
-                setloading(true);
-                const result = (await axios.post("/api/users/register", user)).data
-                setloading(false)
-                setsuccess(true);
-                Swal.fire("Congratulations", "You have registered successfully", "success");
-
-                setname('');
-                setemail('');
-                setpassword('');
-                setcpassword('');
-
-            } catch (error) {
-                setloading(false);
-                console.log(error)
-                seterror(true)
-                Swal.fire("OOPS", "Something went wrong", "error")
-            }
-        } else {
-            Swal.fire("Password Doesn't Match")
         }
     }
     return (

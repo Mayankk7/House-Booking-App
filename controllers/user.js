@@ -15,4 +15,15 @@ const getUsers = async (req, res) => {
 }
 
 
-module.exports = { getUsers }
+//function to delete a user from database 
+const deleteUser = async (req, res) => {
+    try {
+        const userid = req.params.id
+        await User.findByIdAndDelete({ _id: userid })
+        res.status(200).send({ message: "User Deleted Successfully !" })
+    } catch (error) {
+        res.status(404).send({ message: "Server Error" })
+    }
+}
+
+module.exports = { getUsers, deleteUser }

@@ -1,6 +1,6 @@
 const express = require("express")
 const router = express.Router();
-const { getUsers } = require("../controllers/user");
+const { getUsers, deleteUser } = require("../controllers/user");
 const { registerUser, loginUser, resetPassword, forgotPassword } = require("../controllers/auth")
 
 
@@ -16,7 +16,7 @@ router.post("/login", loginUser)
 
 //User Route 
 //route to get all users on home screen 
-//@public route /getallusers
+//@protected route /getallusers
 router.get('/getallusers', getUsers)
 
 
@@ -30,5 +30,10 @@ router.post('/forgot', forgotPassword)
 //route to allow a user to reset password 
 //@protected route 
 router.patch('/reset/:id', resetPassword)
+
+//User Route
+//route to delete a user from database
+//@protected route only for admins
+router.delete('/deleteuser/:id', deleteUser)
 
 module.exports = router;
