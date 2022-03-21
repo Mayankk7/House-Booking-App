@@ -4,6 +4,7 @@ import axios from 'axios';
 import Loader from '../components/Loader'
 import Swal from "sweetalert2"
 import { Tag, Divider } from 'antd';
+import { MDBInput } from "mdbreact";
 
 const { TabPane } = Tabs;
 
@@ -19,22 +20,37 @@ const ProfileScreen = () => {
     }, [])
 
     return (
-        <div className='m-5' >
-            <Tabs defaultActiveKey="1">
-                <TabPane tab="Profile" key="1">
-                    <div className='bs' style={{ backgroundColor: "white" }}>
-                        <b><h1 style={{ fontWeight: "bolder" }}>MY PROFILE</h1></b>
+        <div className='' style={{ color: "white" }}>
+            <Tabs defaultActiveKey="1" size={"large"} style={{ color: "white", height: "70vh" }} tabPosition="top" className='tabshead'>
+                <TabPane tab="Profile" key="1" style={{ color: "black" }}>
+                    <div className='bs tabs' >
+                        <b><h1 style={{ fontWeight: "bolder", padding: "2vh" }}>MY PROFILE</h1></b>
                         <br />
-                        <h1><b>Name :</b> {user.name}</h1>
-                        <h1><b>Email :</b> {user.email}</h1>
-                        <h1><b>IsAdmin :</b> {user.isAdmin ? 'YES' : 'NO'}</h1>
+                        <div className='profile'>
+                            <div>
+                                <div style={{ width: "40vh", padding: "2vh" }}>
+                                    <label>Name</label>
+                                    <input type="name" defaultValue={user.name} disabled />
+                                </div>
+                                <div style={{ width: "40vh", padding: "2vh" }}>
+                                    <label>Email</label>
+                                    <input type="name" defaultValue={user.email} disabled />
+                                </div>
+                            </div>
+                            <div>
+                                <img src={"https://ui-avatars.com/api/?rounded=true&name=" + user.name}
+                                    style={{ width: "15vw", marginLeft: "15vh" }} />
+                            </div>
+                        </div>
+
+
                     </div>
                 </TabPane>
                 <TabPane tab="Bookings" key="2">
                     <MyBookings />
                 </TabPane>
             </Tabs>
-        </div>
+        </div >
     )
 }
 
@@ -87,13 +103,13 @@ export function MyBookings() {
 
     return (
         <div>
-            <div className='row' >
-                <div className='col-md-10' style={{ display: 'flex', flexWrap: "wrap" }}>
+            <div className='flex flex-row' >
+                <div className='bookingtab'>
                     {loading && <Loader />}
                     {bookings && (bookings.map(booking => {
 
                         return (
-                            <div className='bs mx-3' style={{ backgroundColor: "white" }}>
+                            <div className='bs mx-3 mb-5' style={{ backgroundColor: "white" }}>
                                 <p><b>{booking.room}</b></p>
                                 <p><b>BookingID</b> : {booking._id}</p>
                                 <p><b>CheckIn :</b> {booking.fromdate}</p>

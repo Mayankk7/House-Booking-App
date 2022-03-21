@@ -1,8 +1,11 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
+import Swal from 'sweetalert2';
 
 const Navbar = () => {
 
     const user = JSON.parse(localStorage.getItem('currentUser'));
+    const [src, setsrc] = useState('')
 
     const logout = () => {
         localStorage.removeItem('currentUser');
@@ -19,6 +22,9 @@ const Navbar = () => {
                             <i className='fa fa-user mx-2'></i>{user.name}
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <div style={{ marginLeft: "25px" }}>
+                                <img src={"https://ui-avatars.com/api/?rounded=true&name=" + user.name} />
+                            </div>
                             <a class="dropdown-item" href="/profile">Profile</a>
                             <a class="dropdown-item" href="#" onClick={logout}>Logout</a>
                         </div>
