@@ -32,7 +32,7 @@ function App() {
           <Route path="/reset/:id" exact component={Resetscreen} />
         </div>
 
-        <div style={{ position: "fixed", bottom: "0", left: "0", right: "0" }}>
+        <div style={{ position: "fixed", bottom: "0", left: "0", right: "0" }} className="mt-5">
           <Footer />
         </div>
 

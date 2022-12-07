@@ -121,7 +121,7 @@ const Homescreen = () => {
             </div>
 
 
-            <div className='row justify-content-center mt-5 m-3'  >
+            <div className='row justify-content-center mt-5 m-3 mh-100'  >
                 {loading ? (<Loader />) : (rooms.map(room => {
                     return <div className='col-md-9 mt-2' style={{ marginBottom: "10vh" }}>
                         <Room room={room} fromdate={fromdate} todate={todate} />
