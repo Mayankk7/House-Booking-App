@@ -17,6 +17,9 @@ MongoDB is the database used.
 ![image](https://user-images.githubusercontent.com/72187440/206228132-b47c5a95-f055-4933-bbc8-83ea853e56dc.png)
 <br/><br/>
 ![image](https://user-images.githubusercontent.com/72187440/206228576-92f492e7-32cd-41f7-bb17-4306643f963a.png)
+<br/><br/><br/>
+**Deployment**<br/><br/>
+You can check out the website at https://roomszappy.cyclic.app/
 
 
 
